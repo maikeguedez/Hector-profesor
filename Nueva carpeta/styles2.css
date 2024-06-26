@@ -1,0 +1,408 @@
+:root {
+    --primary-color: #00a8cc;
+    --secondary-color: #ffd700;
+    --accent-color: #ff6b6b;
+    --background-color: #f0f8ff;
+    --text-color: #333333;
+    --white: #ffffff;
+    --transition-duration: 0.3s;
+    --header-bg: url('img/hero-bg.jpg');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--background-color);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+/* Header y Navegación */
+.header {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.hamburger-menu {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+#menu__toggle {
+    opacity: 0;
+}
+
+#menu__toggle:checked + .menu__btn > span {
+    transform: rotate(45deg);
+}
+
+#menu__toggle:checked + .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0deg);
+}
+
+#menu__toggle:checked + .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+#menu__toggle:checked ~ .menu-navegacion {
+    right: 0 !important;
+}
+
+.menu__btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+    transition-duration: .25s;
+}
+
+.menu__btn > span::before {
+    content: '';
+    top: -8px;
+}
+
+.menu__btn > span::after {
+    content: '';
+    top: 8px;
+}
+
+.menu-navegacion {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    background-color: rgba(0, 168, 204, 0.9);
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+    transition-duration: var(--transition-duration);
+}
+
+.menu-navegacion a {
+    display: block;
+    padding: 12px 24px;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color var(--transition-duration);
+}
+
+.menu-navegacion a:hover {
+    background-color: #00a8cc;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    animation: fadeInUp 2s ease-in-out;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    animation: fadeInUp 2.5s ease-in-out;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--accent-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color var(--transition-duration);
+    animation: pulse 2s infinite;
+}
+
+.cta-button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Secciones */
+section {
+    padding: 80px 0;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+}
+
+/* Destinos */
+.destinos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.destino-card {
+    background-color: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: transform var(--transition-duration);
+}
+
+.destino-card:hover {
+    transform: translateY(-10px);
+}
+
+.destino-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.destino-card h3 {
+    padding: 20px;
+    font-size: 1.5rem;
+}
+
+.destino-card p {
+    padding: 0 20px 20px;
+}
+
+/* Experiencias */
+.experiencias {
+    background-color: var(--background-color);
+}
+
+.experiencias-flex {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.experiencia-item {
+    flex-basis: calc(33.333% - 20px);
+    text-align: center;
+    padding: 20px;
+    transition: transform var(--transition-duration);
+}
+
+.experiencia-item:hover {
+    transform: scale(1.05);
+}
+
+.experiencia-item i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+/* Alojamiento */
+.alojamiento-slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+.alojamiento-card {
+    flex: 0 0 300px;
+    margin-right: 20px;
+    scroll-snap-align: start;
+    background-color: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: transform var(--transition-duration);
+}
+
+.alojamiento-card:hover {
+    transform: scale(1.05);
+}
+
+.alojamiento-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.alojamiento-card h3, .alojamiento-card p {
+    padding: 20px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 60px 0 20px;
+    position: relative;
+}
+
+.wave-footer::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: url('path/to/wave.svg') repeat-x;
+    animation: wave 10s linear infinite;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.footer-info, .footer-contact, .footer-social {
+    flex-basis: calc(33.333% - 20px);
+}
+
+.footer-social a {
+    color: var(--white);
+    font-size: 1.5rem;
+    margin-right: 15px;
+}
+
+.footer-social a:hover {
+    color: var(--secondary-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes wave {
+    0% { background-position-x: 0; }
+    100% { background-position-x: 1000px; }
+}
+
+/* Efecto de hover para las tarjetas de servicios */
+.service {
+    transition: all 0.3s ease;
+}
+
+.service:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Efecto de zoom suave para las imágenes de la galería */
+.img-galeria {
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.img-galeria:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+/* Efecto de desplazamiento para los elementos de la sección de expertos */
+.cont-expert {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.cont-expert.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Efecto de desvanecimiento para las secciones al hacer scroll */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .menu-navegacion {
+        width: 100%;
+    }
+
+    .experiencia-item {
+        flex-basis: 100%;
+        margin-bottom: 30px;
+    }
+
+    .footer-info, .footer-contact, .footer-social {
+        flex-basis: 100%;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+}

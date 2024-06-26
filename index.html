@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paraíso Tropical - Isla Encantada</title>
+    <link rel="stylesheet" href="Nueva carpeta\styles.css">
+    <link rel="stylesheet" href="Nueva carpeta\styles2.css">
+    <link rel="stylesheet" href="Nueva carpeta\styles3.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="Nueva carpeta\menu.js" defer></script>
+</head>
+<body>
+    <header class="header" id="inicio">
+        <div class="hamburger-menu">
+            <input id="menu__toggle" type="checkbox" />
+            <label class="menu__btn" for="menu__toggle">
+                <span></span>
+            </label>
+            <nav class="menu-navegacion">
+                <a href="#inicio">Inicio</a>
+                <a href="#destinos">Destinos</a>
+                <a href="#experiencias">Experiencias</a>
+                <a href="#alojamiento">Alojamiento</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+        </div>
+        <div class="hero">
+            <h1 class="typing-text"></h1>
+            <p>Explora las maravillas de nuestras playas mexicanas</p>
+            <a href="#destinos" class="cta-button">Comienza tu Aventura</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="destinos" class="destinos">
+            <div class="container">
+                <h2>Destinos Paradisíacos</h2>
+                <div class="destinos-grid">
+                    <div class="destino-card">
+                        <img src="img\img1.wallspic.com-informatica_de_64_bits-windows_10-agua-azure-paisaje_natural-5014x3340.jpg" alt="Playa del Carmen" loading="lazy">
+                        <h3>Playa del Carmen</h3>
+                        <p>Arenas blancas y aguas turquesas te esperan</p>
+                    </div>
+                    <div class="destino-card">
+                        <img src="img\img2.wallspic.com-palmera_verde_sobre_arena_marron_cerca_del_cuerpo_de_agua_durante_el_dia-8600x5734.jpg" alt="Tulum" loading="lazy">
+                        <h3>Tulum</h3>
+                        <p>Historia y belleza natural en perfecta armonía</p>
+                    </div>
+                    <div class="destino-card">
+                        <img src="img\img2.wallspic.com-langkawi_malasia_nour_beta-langkawi-agua-los_recursos_de_agua-azure-5464x3640.jpg" alt="Cozumel" loading="lazy">
+                        <h3>Cozumel</h3>
+                        <p>Un paraíso para los amantes del buceo</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experiencias" class="experiencias">
+            <div class="container">
+                <h2>Experiencias Únicas</h2>
+                <div class="experiencias-flex">
+                    <div class="experiencia-item">
+                        <i class='bx bx-swim'></i>
+                        <h3>Snorkel en arrecifes de coral</h3>
+                        <p>Explora un mundo submarino lleno de color</p>
+                    </div>
+                    <div class="experiencia-item">
+                        <i class='bx bx-spa'></i>
+                        <h3>Spa y bienestar</h3>
+                        <p>Relájate con tratamientos inspirados en la naturaleza</p>
+                    </div>
+                    <div class="experiencia-item">
+                        <i class='bx bx-dish'></i>
+                        <h3>Gastronomía local</h3>
+                        <p>Saborea los auténticos sabores de México</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="alojamiento" class="alojamiento">
+            <div class="container">
+                <h2>Alojamientos de Ensueño</h2>
+                <div class="alojamiento-slider">
+                    <div class="alojamiento-card">
+                        <img src="img\s (1).jpg" alt="Resort de lujo" loading="lazy">
+                        <h3>Resort Todo Incluido</h3>
+                        <p>Lujo y confort frente al mar</p>
+                    </div>
+                    <div class="alojamiento-card">
+                        <img src="img\s (3).jpg" alt="Eco-lodge" loading="lazy">
+                        <h3>Eco-lodge en la Selva</h3>
+                        <p>Conecta con la naturaleza</p>
+                    </div>
+                    <div class="alojamiento-card">
+                        <img src="img\s.jpg" alt="Hotel boutique" loading="lazy">
+                        <h3>Hotel Boutique</h3>
+                        <p>Elegancia y exclusividad</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="contacto">
+            <div class="container">
+                <h2>Contacto</h2>
+                <form action="https://formspree.io/f/{your_form_id}" method="POST">
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button">Enviar</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="wave-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Paraíso Tropical</h3>
+                    <p>Tu puerta de entrada a las maravillas de México</p>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contáctanos</h4>
+                    <p>Email: info@paraisotropical.com</p>
+                    <p>Teléfono: +52 123 456 7890</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Síguenos</h4>
+                    <a href="#" class="social-icon"><i class='bx bxl-facebook'></i></a>
+                    <a href="#" class="social-icon"><i class='bx bxl-instagram'></i></a>
+                    <a href="#" class="social-icon"><i class='bx bxl-twitter'></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Marion Alvarado. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
